@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>私有内容测试页面</title>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f0f8ff; }
+        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .success { color: #28a745; font-weight: bold; }
+        .info { background: #e3f2fd; padding: 15px; border-radius: 5px; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 私有内容访问成功！</h1>
+        
+        <div class="success">
+            ✅ 您已成功通过CloudFront Signed Cookie访问私有内容
+        </div>
+        
+        <div class="info">
+            <h3>📋 验证信息</h3>
+            <ul>
+                <li><strong>访问方式:</strong> CloudFront Signed Cookie</li>
+                <li><strong>URL特点:</strong> 不包含签名参数</li>
+                <li><strong>验证机制:</strong> Cookie自动验证</li>
+                <li><strong>内容来源:</strong> S3私有存储桶</li>
+            </ul>
+        </div>
+        
+        <div class="info">
+            <h3>🔍 技术细节</h3>
+            <ul>
+                <li>CloudFront分发点: cdn.liangym.people.aws.dev</li>
+                <li>源站: S3存储桶 (cloudfront-private-content-liangym-2025)</li>
+                <li>访问控制: Origin Access Control (OAC)</li>
+                <li>签名验证: CloudFront Key Group</li>
+            </ul>
+        </div>
+        
+        <p><strong>测试时间:</strong> <span id="timestamp"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
+</body>
+</html>

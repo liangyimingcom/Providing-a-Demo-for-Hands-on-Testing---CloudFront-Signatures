@@ -1,0 +1,23 @@
+CloudFront Signed Cookie 私有内容测试文档
+==========================================
+
+✅ 成功访问私有内容！
+
+📋 测试信息:
+- 访问时间: 2025-07-11
+- 访问方式: CloudFront Signed Cookie
+- 内容来源: S3私有存储桶
+- 分发点: cdn.liangym.people.aws.dev
+
+🔑 关键特性:
+1. URL中不包含签名参数
+2. 通过Cookie进行身份验证
+3. 支持跨子域名Cookie共享
+4. 自动验证访问权限
+
+🎯 使用场景:
+- 用户从应用程序页面 (app.liangym.people.aws.dev) 获取Cookie
+- 然后访问私有内容页面 (cdn.liangym.people.aws.dev)
+- URL保持干净，无需手动处理签名参数
+
+这是CloudFront Signed Cookie的标准使用场景演示。

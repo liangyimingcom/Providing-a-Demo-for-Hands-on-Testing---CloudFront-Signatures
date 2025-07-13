@@ -1,0 +1,43 @@
+{
+  "CallerReference": "cdn-r53-distribution-2025-07-11",
+  "Comment": "CloudFront distribution for private content (Cookie validation) - cdn.liangym.people.aws.dev",
+  "Enabled": true,
+  "Aliases": {
+    "Quantity": 1,
+    "Items": ["cdn.liangym.people.aws.dev"]
+  },
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "S3-Private-Origin",
+        "DomainName": "cloudfront-private-content-liangym-2025.s3.eu-central-1.amazonaws.com",
+        "S3OriginConfig": {
+          "OriginAccessIdentity": ""
+        },
+        "OriginAccessControlId": "E3UT23BKG9T93W"
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "S3-Private-Origin",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "TrustedKeyGroups": {
+      "Enabled": true,
+      "Quantity": 1,
+      "Items": ["1388ae04-efac-441f-8731-b7691c0c3970"]
+    },
+    "AllowedMethods": {
+      "Quantity": 2,
+      "Items": ["GET", "HEAD"]
+    },
+    "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+    "Compress": true
+  },
+  "ViewerCertificate": {
+    "ACMCertificateArn": "arn:aws:acm:us-east-1:153705321444:certificate/8adc3d84-1b44-4b5a-80f1-11b53498ec38",
+    "SSLSupportMethod": "sni-only",
+    "MinimumProtocolVersion": "TLSv1.2_2021"
+  },
+  "PriceClass": "PriceClass_100"
+}

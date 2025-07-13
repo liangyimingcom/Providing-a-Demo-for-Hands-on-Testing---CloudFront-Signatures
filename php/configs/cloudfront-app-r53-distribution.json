@@ -1,0 +1,48 @@
+{
+  "CallerReference": "app-r53-distribution-2025-07-11",
+  "Comment": "CloudFront distribution for application (Cookie generation) - app.liangym.people.aws.dev",
+  "Enabled": true,
+  "Aliases": {
+    "Quantity": 1,
+    "Items": ["app.liangym.people.aws.dev"]
+  },
+  "Origins": {
+    "Quantity": 1,
+    "Items": [
+      {
+        "Id": "ELB-Origin",
+        "DomainName": "cloudfront-app-alb-921617040.eu-central-1.elb.amazonaws.com",
+        "CustomOriginConfig": {
+          "HTTPPort": 80,
+          "HTTPSPort": 443,
+          "OriginProtocolPolicy": "https-only",
+          "OriginSslProtocols": {
+            "Quantity": 1,
+            "Items": ["TLSv1.2"]
+          }
+        }
+      }
+    ]
+  },
+  "DefaultCacheBehavior": {
+    "TargetOriginId": "ELB-Origin",
+    "ViewerProtocolPolicy": "redirect-to-https",
+    "TrustedKeyGroups": {
+      "Enabled": false,
+      "Quantity": 0
+    },
+    "AllowedMethods": {
+      "Quantity": 7,
+      "Items": ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
+    },
+    "CachePolicyId": "83da9c7e-98b4-4e11-a168-04f0df8e2c65",
+    "OriginRequestPolicyId": "216adef6-5c7f-47e4-b989-5492eafa07d3",
+    "Compress": true
+  },
+  "ViewerCertificate": {
+    "ACMCertificateArn": "arn:aws:acm:us-east-1:153705321444:certificate/8adc3d84-1b44-4b5a-80f1-11b53498ec38",
+    "SSLSupportMethod": "sni-only",
+    "MinimumProtocolVersion": "TLSv1.2_2021"
+  },
+  "PriceClass": "PriceClass_100"
+}

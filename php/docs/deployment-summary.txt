@@ -1,0 +1,27 @@
+🎉 CloudFront双分发点部署完成
+
+📋 部署信息:
+- 主域名: liangym.people.aws.dev
+- 应用程序域名: app.liangym.people.aws.dev
+- 私有内容域名: cdn.liangym.people.aws.dev
+
+🔧 CloudFront分发点:
+- 应用程序分发点ID: EST02CZSOW9CP
+- 应用程序分发点域名: d1pjb4y4b95hav.cloudfront.net
+- 私有内容分发点ID: E3U7W0GOBIL5LU
+- 私有内容分发点域名: d129z9p8735n3y.cloudfront.net
+
+🌐 Route 53:
+- Hosted Zone ID: Z06635113471MTWJ5A5HD
+- DNS变更ID: /change/C0472524VSUCXYPN44VL
+
+📝 下一步:
+1. 访问 https://app.liangym.people.aws.dev/app-r53-main.php 测试应用程序
+2. 检查Cookie是否正确设置
+3. 测试私有内容访问: https://cdn.liangym.people.aws.dev/
+4. 验证URL中没有签名参数
+
+⚠️  注意事项:
+- 确保SSL证书已正确配置
+- 检查S3存储桶的OAC配置
+- 验证ELB的健康检查状态
